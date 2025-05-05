@@ -12,6 +12,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "dotenv": "^16.5.0",
     "gemini-ai": "^2.2.1"
   }

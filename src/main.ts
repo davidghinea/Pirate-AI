@@ -2,6 +2,7 @@ import * as readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 import Gemini from "gemini-ai";
 import dotenv from "dotenv";
+import chalk from "chalk";
 
 dotenv.config();
 
@@ -22,7 +23,11 @@ async function main() {
 
   try {
     userMessage = await rl.question(
-      "     Dread Pirate Roberts: Arrr, welcome aboard Pirate-AI, ye scallywag! What be yer first question, matey? (Type 'abandonship' to quit) 🏴‍☠️\n\n                      You: "
+      `     ` +
+        chalk.bold(chalk.redBright(`Dread Pirate Roberts`)) +
+        `: Arrr, welcome aboard Pirate-AI, ye scallywag! What be yer first question, matey? (Type 'abandonship' to quit) 🏴‍☠️\n\n                      ` +
+        chalk.bold(`You`) +
+        `: `
     );
 
     if (userMessage.toLowerCase() === "abandonship") {
@@ -41,14 +46,19 @@ async function main() {
       } catch (error: any) {
         if (error.message?.includes("SafetyError")) {
           pirateResponse =
-            "    Dread Pirate Roberts: Arr! I'll not be answerin' that, ye bilge rat! Ask somethin' proper!";
+            chalk.bold(chalk.redBright("    Dread Pirate Roberts:")) +
+            " Arr! I'll not be answerin' that, ye bilge rat! Ask somethin' proper!";
         } else {
           throw error;
         }
       }
 
       userMessage = await rl.question(
-        `\n     Dread Pirate Roberts: ${pirateResponse}\n                      You: `
+        `\n     ` +
+          chalk.bold(chalk.redBright(`Dread Pirate Roberts`)) +
+          `: ${pirateResponse}\n                      ` +
+          chalk.bold(`You`) +
+          `: `
       );
 
       if (userMessage.toLowerCase() === "abandonship") {
@@ -63,7 +73,5 @@ async function main() {
     rl.close();
   }
 }
-
-// TO DO: add colors to the terminal if possible
 
 main();
