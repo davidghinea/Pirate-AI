@@ -1,0 +1,18 @@
+{
+  "name": "pirate-ai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx tsx src/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "tsx": "^4.7.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "gemini-ai": "^2.2.1"
+  }
+}
