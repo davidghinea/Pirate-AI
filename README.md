@@ -2,7 +2,7 @@
 
 **Pirate AI** is a TypeScript app that runs on the terminal, integrating with Gemini AI to let you chat with a pirate. I made this in less than an hour, the code is minimal.
 
-![Pirate AI Demo](https://i.imgur.com/tyxCMQm.png)
+![Pirate AI Demo](assets/pirate-demo.png)
 
 ## How to Run
 
